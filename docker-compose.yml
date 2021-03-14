@@ -1,0 +1,24 @@
+version: "3"
+services:
+  server:
+    build: 
+      context: ./src/
+
+    environment:
+      - NODE_PORT=${NODE_PORT}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_HOST=${DATABASE_HOST}
+    links:
+      - database
+    depends_on:
+      - database
+    ports:
+      - "8080:8080"
+    container_name: note-server
+
+  database:
+    image: mongo:4.2.2
+    ports:
+      - "${DATABASE_PORT}:27017"
+    container_name: note-db
+

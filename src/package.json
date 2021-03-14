@@ -1,0 +1,32 @@
+{
+  "name": "noteapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint:fix": "eslint . --fix",
+    "test": "jest --runInBand"
+  },
+  "author": "Puzanova Irina",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.14"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
+    "mongodb-memory-server": "^6.9.3",
+    "supertest": "^6.1.3"
+  }
+}
+
+curl -X PUT http://localhost:8080/notes -H "Content-Type: application/json" -d '{ "id":"604dcaa9271c3300167363f2", "title":"Title3", "content":"Content3"}'
